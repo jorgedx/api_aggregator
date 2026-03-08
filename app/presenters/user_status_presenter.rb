@@ -3,7 +3,7 @@ class UserStatusPresenter
     @user_status = user_status
   end
 
-  def as_json(_options = {})
+  def as_json
     {
       id: @user_status.id,
       full_name: @user_status.full_name,
