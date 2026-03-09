@@ -53,11 +53,11 @@ Example success response
 }
 ```
 
-* id: internal id.
-* full_name: firstName and lastName combined.
-* experience: "Veteran" If age > 50, otherwise "Rookie".
-* pending_task_count: The total count of incomplete tasks.
-* next_urgent_task: Title of the first incomplete task (an empty string if nothing exist).
+* id (int): Internal id.
+* full_name (string): firstName and lastName combined.
+* experience (string): "Veteran" If age > 50, otherwise "Rookie".
+* pending_task_count (int): The total count of incomplete tasks.
+* next_urgent_task (string): Title of the first incomplete task (an empty string if nothing exist).
 
 ## Tests
 Running Rspec tests by executing this command
