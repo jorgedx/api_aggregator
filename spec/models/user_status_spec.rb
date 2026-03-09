@@ -10,7 +10,7 @@ RSpec.describe UserStatus, type: :model do
     )
   end
 
-  describe "Validaciones" do
+  describe "Validations" do
     it "valid with correct attributes" do
       expect(user_status).to be_valid
     end

@@ -59,6 +59,6 @@ class UserStatusAggregatorService
   end
 
   def validate_external_id!
-    raise ArgumentError, "please provide a valid identificator" if @external_user_id.blank?
+    raise ArgumentError, "[UserStatusAggregatorService] Please provide a valid identificator" if @external_user_id.blank?
   end
 end

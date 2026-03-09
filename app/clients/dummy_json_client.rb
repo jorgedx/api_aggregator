@@ -4,18 +4,26 @@ class DummyJsonClient
   base_uri 'https://dummyjson.com'
   default_timeout 5
 
-  USER_PATH  = "/users/"
+  USERS_PATH  = "/users/"
   TODOS_PATH = "/todos/user/"
 
   def user_data(id)
-    request("#{USER_PATH}#{id}")
+    users_request id
   end
 
   def todos_user_data(id)
-    request("#{TODOS_PATH}#{id}")
+    todos_user_request id
   end
 
   private
+
+  def users_request(id)
+    request("#{USERS_PATH}#{id}")
+  end
+
+  def todos_user_request(id)
+    request("#{TODOS_PATH}#{id}")
+  end
 
   def request(path)
     response = self.class.get(path)
@@ -23,8 +31,6 @@ class DummyJsonClient
     return response if response.success?
 
     case response.code
-    when 200
-      response.parsed_response
     when 400
       raise ActionController::BadRequest, "Bad Request: #{path}"
     when 404

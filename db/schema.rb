@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_03_07_024725) do
+ActiveRecord::Schema[7.2].define(version: 2026_03_08_151639) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "user_statuses", force: :cascade do |t|
-    t.integer "external_user_id"
+    t.integer "external_user_id", null: false
     t.string "full_name"
     t.string "experience"
     t.integer "pending_task_count"
     t.string "next_urgent_task"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["external_user_id"], name: "index_user_statuses_on_external_user_id"
+    t.index ["external_user_id"], name: "index_user_statuses_on_external_user_id", unique: true
   end
 end
